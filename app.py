@@ -1,8 +1,7 @@
 from operator import indexOf
 from flask import Flask, render_template, redirect, url_for
 from services_supervisor import ServicesSupervisor
-import start_vm
-
+import os
 
 vm1 = ServicesSupervisor("EL UNICO QUE FUNCIONA", '10.1.1.102', method='port', port=4090)
 
@@ -41,7 +40,8 @@ def show_app(app):
     #redirect to external web
     sel_serv = list_services[indexOf(list_services_names,app)]
     port = ''
-    start_vm(sel_serv.service_name)
+    #create vm from app1.vdi
+    os.os.popen("VBoxManage clonevm " + "app1.vdi" + " --name " + app + " --register")
     if sel_serv.method == 'port':
         p = str(sel_serv.service_port)
         port = ':' + p
