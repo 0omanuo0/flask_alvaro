@@ -1,0 +1,11 @@
+Flask
+pandas
+numpy
+scikit_learn
+gunicorn
+Werkzeug
+Jinja2
+itsdangerous
+MarkupSafe
+selenium
+pythonping==1.1.2

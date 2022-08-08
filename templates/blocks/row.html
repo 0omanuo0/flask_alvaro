@@ -1,0 +1,10 @@
+
+{% block content %}
+<div class="row">
+    {% for card in card %}
+        {%with card=card %}
+            {% include "blocks/card.html" %}
+        {% endwith %}
+    {% endfor %}
+</div>
+{% endblock content %}
